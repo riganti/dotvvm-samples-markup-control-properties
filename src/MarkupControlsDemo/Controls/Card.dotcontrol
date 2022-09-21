@@ -1,7 +1,7 @@
 ﻿@viewModel MarkupControlsDemo.Model.ProductModel, MarkupControlsDemo
 @noWrapperTag
-@property bool ShowDescription
-@property bool ShowDetailsButton
+@property bool ShowDescription, MarkupOptionsAttribute.AllowBinding = false
+@property bool ShowDetailsButton, MarkupOptionsAttribute.AllowBinding = false
 @property string DetailsButtonText = "Details"
 
 <div class="card">
@@ -9,17 +9,17 @@
         <img src="{value: ImageUrl}" alt="{value: Title}" />
     </div>
     <div class="card-body">
-        <h5 class="card-title">{{value: Title}}</h5>
-        <h6 class="card-subtitle">{{value: Price.ToString("c2")}}</h6>
+        <h5 class="card-title mb-3">{{value: Title}}</h5>
+        <h6 class="card-subtitle mb-3">{{value: Price.ToString("c2")}}</h6>
         
         <p class="card-text" 
-           IncludeInPage="{resource: _control.ShowDescription}">{{value: Description}}</p>
+           IncludeInPage="{value: _control.ShowDescription}">{{value: Description}}</p>
 
         <dot:RouteLink RouteName="Product_Detail"
                        Param-Id="{value: Id}"
                        class="btn btn-primary"
-                       IncludeInPage="{resource: _control.ShowDetailsButton}"
-                       Text="{resource: _control.DetailsButtonText}" />
+                       IncludeInPage="{value: _control.ShowDetailsButton}"
+                       Text="{value: _control.DetailsButtonText}" />
     </div>
 </div>
 

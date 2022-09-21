@@ -1,4 +1,5 @@
-﻿using DotVVM.Framework.Configuration;
+﻿using DotVVM.Framework.Compilation;
+using DotVVM.Framework.Configuration;
 using DotVVM.Framework.ResourceManagement;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,6 +13,8 @@ namespace MarkupControlsDemo
             ConfigureRoutes(config, applicationPath);
             ConfigureControls(config, applicationPath);
             ConfigureResources(config, applicationPath);
+            
+            config.Markup.ImportedNamespaces.Add(new NamespaceImport("DotVVM.Framework.Controls"));
         }
 
         private void ConfigureRoutes(DotvvmConfiguration config, string applicationPath)
