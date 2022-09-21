@@ -1,0 +1,25 @@
+﻿@viewModel MarkupControlsDemo.Model.ProductModel, MarkupControlsDemo
+@noWrapperTag
+@property bool ShowDescription
+@property bool ShowDetailsButton
+@property string DetailsButtonText = "Details"
+
+<div class="card">
+    <div class="card-img-top ratio ratio-1x1">
+        <img src="{value: ImageUrl}" alt="{value: Title}" />
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{value: Title}}</h5>
+        <h6 class="card-subtitle">{{value: Price.ToString("c2")}}</h6>
+        
+        <p class="card-text" 
+           IncludeInPage="{resource: _control.ShowDescription}">{{value: Description}}</p>
+
+        <dot:RouteLink RouteName="Product_Detail"
+                       Param-Id="{value: Id}"
+                       class="btn btn-primary"
+                       IncludeInPage="{resource: _control.ShowDetailsButton}"
+                       Text="{resource: _control.DetailsButtonText}" />
+    </div>
+</div>
+

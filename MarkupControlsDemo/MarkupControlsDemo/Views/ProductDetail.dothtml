@@ -1,0 +1,45 @@
+﻿@viewModel MarkupControlsDemo.ViewModels.ProductDetailViewModel, MarkupControlsDemo
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <div class="row">
+        <div class="col-lg-4" DataContext="{value: Product}">
+            <cc:Card ShowDescription="true" />
+        </div>
+
+        <div class="col-lg-8" DataContext="{value: Order}">
+            <form>
+                <div class="mb-4">
+                    <label class="control-label">Quantity</label>
+                    <dot:TextBox class="form-control" Text="{value: Quantity}" Type="Number" />
+                </div>
+                <div class="mb-4">
+                    <label class="control-label">Name</label>
+                    <dot:TextBox class="form-control" Text="{value: Name}" />
+                </div>
+                <div class="mb-4">
+                    <label class="control-label">E-mail</label>
+                    <dot:TextBox class="form-control" Text="{value: Email}" />
+                </div>
+                <div class="mb-4">
+                    <label class="control-label">Shipping addres</label>
+                    <dot:TextBox class="form-control" Text="{value: Address}" />
+                </div>
+                <div class="mb-4">
+                    <label class="control-label">Notes</label>
+                    <dot:TextBox class="form-control" Text="{value: Notes}" Type="MultiLine" />
+                </div>
+
+                <dot:Button Text="Submit order"
+                            class="btn btn-primary"
+                            IsSubmitButton="true"
+                            Click="{command: null}" />
+            </form>
+        </div>
+
+    </div>
+
+
+</dot:Content>
+

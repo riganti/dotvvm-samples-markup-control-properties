@@ -1,0 +1,13 @@
+﻿@viewModel MarkupControlsDemo.ViewModels.DefaultViewModel, MarkupControlsDemo
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <dot:Repeater DataSource="{value: Products}" class="row row-cols-md-3 row-cols-lg-4 g-4">
+
+        <div class="col">
+            <cc:Card ShowDetailsButton="true" />
+        </div>
+
+    </dot:Repeater>
+
+</dot:Content>
