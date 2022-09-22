@@ -62,7 +62,7 @@ namespace MarkupControlsDemo
 
             app.UseEndpoints(endpoints => 
             {
-                endpoints.MapDotvvmHotReload();
+                //endpoints.MapDotvvmHotReload();
 
                 // register ASP.NET Core MVC and other endpoint routing middlewares
             });

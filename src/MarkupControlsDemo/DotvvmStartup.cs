@@ -38,7 +38,7 @@ namespace MarkupControlsDemo
 		public void ConfigureServices(IDotvvmServiceCollection options)
         {
             options.AddDefaultTempStorages("temp");
-            options.AddHotReload();
+            //options.AddHotReload();
 		}
     }
 }
